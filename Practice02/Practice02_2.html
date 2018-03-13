@@ -1,0 +1,45 @@
+<!--
+2014105102 함효민
+Practice02_2 
+-->
+<html> 
+<head>
+    <style>
+    </style>
+</head>
+<body>
+
+    <button onclick="load()">
+    Load
+    </button>
+
+    <h1><p id="name"></p></h1>
+    <h1><p id="birth"></p></h1>
+    <h1><p id="address"></p></h1>
+    <h1><p id="gender"></p></h1>
+
+<script>
+    
+var text =' { "resourceType": "Patient", "id": "xds", "text": { "status": "generated" }, "identifier": [ { "use": "usual", "type": { "coding": [ { "system": "http://hl7.org/fhir/v2/0203", "code": "MR" } ] }, "system": "urn:oid:1.2.3.4.5", "value": "89765a87b" } ], "active": true, "name": [ { "family":[ "Doe" ], "given": [ "John" ] } ], "gender": "male", "birthDate": "1956-05-27", "address": [ { "line": [ "100 Main St" ], "city": "Metropolis", "state": "Il", "postalCode": "44130", "country": "USA" } ], "managingOrganization": { "reference": "Organization/2" } }';
+   
+    
+    
+var obj = JSON.parse(text);
+            
+     function load(){
+         document.getElementById("name").innerHTML = obj.name[0].family[0] +" " +obj.name[0].given[0];
+         document.getElementById("birth").innerHTML = obj.birthDate;
+         document.getElementById("address").innerHTML = obj.address[0].line[0] +"<br>" +obj.address[0].city+ " (" +obj.address[0].postalCode + ")";
+         document.getElementById("gender").innerHTML = obj.gender;
+
+     }
+  
+    
+    document.getElementById("name").innerHTML ="name";
+    document.getElementById("birth").innerHTML ="birth";
+    document.getElementById("address").innerHTML ="address";
+    document.getElementById("gender").innerHTML ="gender";
+    
+</script>
+</body>
+</html>

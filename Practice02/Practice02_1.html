@@ -1,0 +1,63 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"> <meta http-equiv="Content-Type" Content="text/html; charset=utf-8" />
+<!--
+2014105102 함효민
+Practice02_1 
+-->
+<html> 
+<head>
+    <style>
+        body {background-color: black;}
+        h1 {color: white;}
+    </style>
+</head>
+<body>
+    
+    <h1><p id="output1">  </p></h1>
+    <h2 style="color : yellow">2014105102</h2>
+    <h2 style="color : gray"><p id="output3">  </p></h2>
+    
+    
+    <button onclick="langChange()">
+    한/영
+    </button>
+    
+<script>
+
+   
+    
+    var eng = {
+    name : "Hahm Hyomin",
+    id : 2014105102,
+    school : "Kyungpook National Univ."
+    };
+    
+    var kor = {
+    name : "함효민",
+    id : 2014105102,
+    school : "경북대학교"
+    };
+   
+    var curr = eng;
+    
+        document.getElementById("output1").innerHTML = eng["name"];
+        document.getElementById("output3").innerHTML = eng["school"];
+      
+    
+     function langChange(){
+         if(curr == eng){
+            document.getElementById("output1").innerHTML = kor["name"];
+            document.getElementById("output3").innerHTML = kor["school"];
+             curr= kor;
+      
+        }
+        else if(curr == kor){
+        document.getElementById("output1").innerHTML = eng["name"];
+        document.getElementById("output3").innerHTML = eng["school"];
+            curr = eng;
+        }
+     }
+</script>
+</body>
+
+
+</html>
